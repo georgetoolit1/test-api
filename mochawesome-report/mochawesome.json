@@ -1,0 +1,195 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-01-31T11:43:32.846Z",
+    "end": "2021-01-31T11:43:37.424Z",
+    "duration": 4578,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fd4675a5-7362-4629-8f66-9cfea5672269",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "85e4b990-33da-4e62-87b8-0e1e0f342134",
+          "title": "API Automation tests",
+          "fullFile": "/Users/georgetoolit/Desktop/testautomation/test-api/tests/firstTest.spec.js",
+          "file": "/tests/firstTest.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"API Automation tests\"",
+              "fullTitle": "API Automation tests \"before all\" hook in \"API Automation tests\"",
+              "timedOut": false,
+              "duration": 786,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "userId = await helper.createRandomUser();",
+              "err": {},
+              "uuid": "3ec570f9-4bd5-4c9f-b73a-4c1f1e357f3e",
+              "parentUUID": "85e4b990-33da-4e62-87b8-0e1e0f342134",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "/posts",
+              "fullTitle": "API Automation tests /posts",
+              "timedOut": false,
+              "duration": 762,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await request\n.post('users').set(\"Authorization\", `Bearer ${config.TOKEN}`)\n.send(config.myUser)\n.then((response) => {\n    expect(response.body.data).to.deep.include(config.myUser);\n});",
+              "err": {},
+              "uuid": "ee23a640-fa0d-4411-a53b-0a473b4c50da",
+              "parentUUID": "85e4b990-33da-4e62-87b8-0e1e0f342134",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "/put/users:id",
+              "fullTitle": "API Automation tests /put/users:id",
+              "timedOut": false,
+              "duration": 755,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const data = {\n    status: \"Active\",\n    name: \"Lucy Adams\",\n}\nconst res = await request\n.put(`users/${userId}`)\n.set(\"Authorization\", `Bearer ${config.TOKEN}`)\n.send(data).then((response) =>{\n    expect(response.body.data).to.deep.include(data);\n});",
+              "err": {},
+              "uuid": "7893e72f-8455-40f0-92d1-d49c0d161862",
+              "parentUUID": "85e4b990-33da-4e62-87b8-0e1e0f342134",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "/get",
+              "fullTitle": "API Automation tests /get",
+              "timedOut": false,
+              "duration": 709,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await request\n.get(`users?access-token=${config.TOKEN}`)\n.then((response) => {\n   expect(response.statusCode).to.be.equal(200);\n});",
+              "err": {},
+              "uuid": "600e2568-4ddf-4417-a4d6-e32528e1eee9",
+              "parentUUID": "85e4b990-33da-4e62-87b8-0e1e0f342134",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "/get/id",
+              "fullTitle": "API Automation tests /get/id",
+              "timedOut": false,
+              "duration": 739,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await request\n.get(`users/${userId}?access-token=${config.TOKEN}`)\n.then((response) => {\n    expect(response.statusCode).to.be.equal(200);\n});",
+              "err": {},
+              "uuid": "87aab5d6-ed23-4e79-97e4-96c9c11ef427",
+              "parentUUID": "85e4b990-33da-4e62-87b8-0e1e0f342134",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "/delete",
+              "fullTitle": "API Automation tests /delete",
+              "timedOut": false,
+              "duration": 822,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await request.delete(`users/${userId}`)\n.set(\"Authorization\", `Bearer ${config.TOKEN}`)\n.send(config.user)\n.then( (response) => {\n    expect(response.body.data).to.be.eq(null);\n});",
+              "err": {},
+              "uuid": "935a7a09-f848-4160-bdbe-249fc5462013",
+              "parentUUID": "85e4b990-33da-4e62-87b8-0e1e0f342134",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ee23a640-fa0d-4411-a53b-0a473b4c50da",
+            "7893e72f-8455-40f0-92d1-d49c0d161862",
+            "600e2568-4ddf-4417-a4d6-e32528e1eee9",
+            "87aab5d6-ed23-4e79-97e4-96c9c11ef427",
+            "935a7a09-f848-4160-bdbe-249fc5462013"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3787,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 5000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 5000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "8.2.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.1.0"
+    }
+  }
+}
